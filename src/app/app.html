@@ -1,0 +1,45 @@
+<ion-menu id="menuMain" [content]="content" type="overlay">
+    <ion-nav #content></ion-nav>
+    <ion-header>
+        <ion-toolbar color="azulBebe">
+            <ion-list>
+                <ion-item color="azulBebe">
+                    <ion-avatar item-start>
+                        <img src="{{ urlImage }}"/>
+                    </ion-avatar>
+                    <h2>
+                        <b>@jogador</b>
+                    </h2>
+                    <p>Login</p>
+                </ion-item>
+            </ion-list>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+        <ion-list>
+            <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+               {{ p.title }}
+            </button>
+            
+            <button menuClose ion-item (click)="pegarGps()">Pegar posição</button>
+            
+            <button menuClose ion-item (click)="abrirCamera()">
+                <ion-icon name="camera"></ion-icon>
+                Camera
+            </button>
+
+            <button menuClose ion-item (click)="vibrar()">
+                <ion-icon name="alarm"></ion-icon>
+                Vibrar
+            </button>
+
+            <button menuClose ion-item (click)="sair()">
+                <ion-icon name="power"></ion-icon>
+                Sair
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage"></ion-nav>

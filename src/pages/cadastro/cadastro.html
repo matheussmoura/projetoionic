@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>Cadastre-se</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<!-- SVG GERADO NO SITE: https://getwaves.io/ -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <path fill="#327eff" fill-opacity="1" d="M0,256L60,218.7C120,181,240,107,360,117.3C480,128,600,224,720,245.3C840,267,960,213,1080,165.3C1200,117,1320,75,1380,53.3L1440,32L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+</svg>
+  <ion-list>
+      <ion-item>
+        <ion-label stacked>Nome</ion-label>
+        <ion-input type="nome" [(ngModel)]="nome"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Data de nascimento</ion-label>
+        <ion-datetime
+          doneText="OK"
+          cancelText="Cancelar"
+          min="1930"
+          displayFormat="DD/MM/YYYY"
+          [(ngModel)]="dtNascimento"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>E-mail</ion-label>
+        <ion-input type="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label stacked>Cep</ion-label>
+          <ion-input type="text" (blur)="buscarCep()" [(ngModel)]="cep"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label stacked>Rua</ion-label>
+          <ion-input type="text" [(ngModel)]="rua"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label stacked>Bairro</ion-label>
+          <ion-input type="text" [(ngModel)]="bairro"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label stacked>Estado</ion-label>
+          <ion-input type="text" [(ngModel)]="estado"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+          <ion-label stacked>Senha</ion-label>
+          <ion-input type="password" [(ngModel)]="senha"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <button (click)="cadastrar()" id="btnLogin" ion-button block round>
+          CADASTRAR
+        </button>
+        <br />
+        <p (click)="jaPossuoConta()">Já tem uma conta? <b>Entrar</b></p>
+    </ion-item>
+  </ion-list>
+</ion-content>
